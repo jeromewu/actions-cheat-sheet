@@ -16,9 +16,17 @@ jobs:
     steps:
       - name: GCC version
         run: gcc -v
-  windows_with_container:
-    runs-on: windows-latest
-    container: gcc:4
-    steps:
-      - name: GCC version
-        run: gcc -v
+  # NOT WORKING
+  # macos_with_container:
+  #   runs-on: macos-latest
+  #   container: gcc:4
+  #   steps:
+  #     - name: GCC version
+  #       run: gcc -v
+  # NOT WORKING
+  # windows_with_container:
+  #   runs-on: windows-latest
+  #   container: gcc:4
+  #   steps:
+  #     - name: GCC version
+  #       run: gcc -v
