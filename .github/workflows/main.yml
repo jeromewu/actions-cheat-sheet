@@ -22,6 +22,7 @@ jobs:
       - name: GCC version
         shell: bash
         run: |
+          shopt -s expand_aliases
           alias gcc='gcc-8'
           gcc-8 -v
           gcc -v
