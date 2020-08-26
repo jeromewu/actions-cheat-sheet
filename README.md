@@ -12,15 +12,17 @@ Cheat sheet for Github Actions! PR highly welcome. :smile:
 - Strategy: creates a build matrix for your jobs. You can define different variations of an environment to run each job in.
 
 ```yaml
-runs-on: ${{ matrix.os }}
-strategy:
-  matrix:
-    os: [ubuntu-16.04, ubuntu-18.04]
-    node: [6, 8, 10]
-steps:
-  - uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node }}
+jobs:
+  multiple_os_versions:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04]
+        node: [6, 8, 10]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
 ```
 
 ## Linux Only
@@ -44,3 +46,14 @@ jobs:
 ## Windows Only
 
 - `jobs.<job_id>.container` doesn't work when `jobs.<job_id>.runs-on` = `windows-*`
+- Use bash
+
+```yaml
+jobs:
+  windows_with_bash:
+    runs-on: windows-latest
+    steps:
+      - name: Display PATH
+        run: echo $PATH
+        shell: bash
+```
