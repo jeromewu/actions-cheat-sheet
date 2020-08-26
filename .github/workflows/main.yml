@@ -21,7 +21,9 @@ jobs:
     steps:
       - name: GCC version
         shell: bash
-        run: gcc -v
+        run: |
+          alias gcc='gcc-8'
+          gcc -v
       - name: Make version
         shell: bash
         run: make -v
