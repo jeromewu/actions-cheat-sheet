@@ -9,14 +9,16 @@ on:
   pull_request:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  macos_with_container:
-    # The type of runner that the job will run on
+  linux_with_container:
     runs-on: ubuntu-latest
     container: gcc:4
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: GCC version
+        run: gcc -v
+  windows_with_container:
+    runs-on: windows-latest
+    container: gcc:4
     steps:
       - name: GCC version
         run: gcc -v
