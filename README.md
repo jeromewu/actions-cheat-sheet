@@ -9,6 +9,20 @@ Cheat sheet for Github Actions! PR highly welcome. :smile:
 
 ## Common
 
+- Strategy: creates a build matrix for your jobs. You can define different variations of an environment to run each job in.
+
+```yaml
+runs-on: ${{ matrix.os }}
+strategy:
+  matrix:
+    os: [ubuntu-16.04, ubuntu-18.04]
+    node: [6, 8, 10]
+steps:
+  - uses: actions/setup-node@v1
+    with:
+      node-version: ${{ matrix.node }}
+```
+
 ## Linux Only
 
 - Use container in Linux
