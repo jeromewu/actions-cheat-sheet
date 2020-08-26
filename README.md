@@ -1,6 +1,6 @@
 # actions-cheat-sheet
 
-Cheat sheet for Github Actions! PR highly welcome. :smile:
+Cheat sheet for Github Actions! PRs are highly welcome. :smile:
 
 - [Common](#common)
 - [Linux Only](#linux-only)
