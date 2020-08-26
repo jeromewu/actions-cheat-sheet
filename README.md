@@ -42,6 +42,20 @@ jobs:
 ## MacOS Only
 
 - `jobs.<job_id>.container` doesn't work when `jobs.<job_id>.runs-on` = `macos-*`
+- Use gcc-8 / gcc-9 as default gcc runtime
+
+```yaml
+jobs:
+  macos_with_gcc_and_make:
+    runs-on: macos-latest
+    steps:
+      - name: GCC version
+        shell: bash
+        run: |
+          shopt -s expand_aliases
+          alias gcc='gcc-8'
+          gcc -v
+```
 
 ## Windows Only
 
