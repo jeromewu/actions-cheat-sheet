@@ -16,6 +16,15 @@ jobs:
     steps:
       - name: GCC version
         run: gcc -v
+  macos_with_gcc_and_make:
+    runs-on: macos-latest
+    steps:
+      - name: GCC version
+        shell: bash
+        run: gcc -v
+      - name: Make version
+        shell: bash
+        run: make -v
   windows_with_bash:
     runs-on: windows-latest
     steps:
