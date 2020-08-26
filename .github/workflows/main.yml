@@ -23,6 +23,7 @@ jobs:
         shell: bash
         run: |
           alias gcc='gcc-8'
+          gcc-8 -v
           gcc -v
       - name: Make version
         shell: bash
