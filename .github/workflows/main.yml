@@ -22,6 +22,15 @@ jobs:
       - name: Display PATH
         run: echo $PATH
         shell: bash
+  windows_with_gcc_and_make:
+    runs-on: windows-latest
+    steps:
+      - name: GCC version
+        shell: bash
+        run: gcc -v
+      - name: Make version
+        shell: bash
+        run: make -v
   # NOT WORKING
   # macos_with_container:
   #   runs-on: macos-latest
