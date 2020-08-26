@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: GCC version
         run: gcc -v
+  windows_with_bash:
+    runs-on: windows-latest
+    stesp:
+      - name: Display PATH
+        run: echo $PATH
+        shell: bash
   # NOT WORKING
   # macos_with_container:
   #   runs-on: macos-latest
