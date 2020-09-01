@@ -29,6 +29,15 @@ jobs:
       - name: Make version
         shell: bash
         run: make -v
+  macos_with_llvm_11:
+    runs-on: macos-latest
+    steps:
+      - name: Install llvm 11
+        run: |
+          brew install llvm@11
+      - name: LLVM version
+        run: |
+          llvm-ar --version
   windows_with_bash:
     runs-on: windows-latest
     steps:
