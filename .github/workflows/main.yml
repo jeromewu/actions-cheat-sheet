@@ -39,6 +39,7 @@ jobs:
           actions-cache-folder: 'emsdk-cache'
       - name: Find emcc path
         run: |
+          pwd
           cd $(dirname $(which emcc))
           ls -l
           cd ../bin
