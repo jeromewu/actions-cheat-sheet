@@ -29,12 +29,12 @@ jobs:
       - name: Make version
         shell: bash
         run: make -v
-  macos_with_llvm_11:
+  macos_with_llvm_10:
     runs-on: macos-latest
     steps:
-      - name: Install llvm 11
+      - name: Install llvm 10
         run: |
-          brew install llvm@11
+          brew install llvm@10
       - name: LLVM version
         run: |
           llvm-ar --version
