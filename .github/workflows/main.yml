@@ -39,11 +39,8 @@ jobs:
           actions-cache-folder: 'emsdk-cache'
       - name: Find emcc path
         run: |
-          pwd
-          cd $(dirname $(which emcc))
-          ls -l
-          cd ../bin
-          ls -l
+          export PATH=$PATH:$PWD/emsdk-cache/emsdk-master/upstream/bin
+          llvm-ranlib --version
   windows_with_bash:
     runs-on: windows-latest
     steps:
