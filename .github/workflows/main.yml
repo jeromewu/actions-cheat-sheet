@@ -29,7 +29,7 @@ jobs:
       - name: Make version
         shell: bash
         run: make -v
-  macos_with_llvm_10:
+  macos_with_emscripten:
     runs-on: macos-latest
     steps:
       - name: Setup emsdk
@@ -39,7 +39,10 @@ jobs:
           actions-cache-folder: 'emsdk-cache'
       - name: Find emcc path
         run: |
-          which emcc
+          cd $(dirname $(which emcc))
+          ls -l
+          cd ../bin
+          ls -l
   windows_with_bash:
     runs-on: windows-latest
     steps:
